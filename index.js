@@ -46,8 +46,8 @@ function main(initialState, view, opts) {
         if (opts.createOnly) {
             create(newTree, opts)
         } else {
-            var patches = diff(tree, newTree)
-            patch(target, patches)
+            var patches = diff(tree, newTree, opts)
+            patch(target, patches, opts)
         }
 
         tree = newTree
