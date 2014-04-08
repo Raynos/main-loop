@@ -14,12 +14,10 @@ function main(initialState, view, opts) {
     var patch = opts.patch || vdomPatch
     var looping = true
 
-    var tree = view(currentState)
-    var target = create(tree, opts)
+    var tree
+    var target
 
-    currentState = null
-
-    raf(redraw)
+    redraw()
 
     return {
         target: target,
@@ -27,7 +25,7 @@ function main(initialState, view, opts) {
     }
 
     function update(state) {
-        if (currentState === null && !looping) {
+        if (currentState === null && !looping && state !== null) {
             looping = true
             raf(redraw)
         }
@@ -43,8 +41,8 @@ function main(initialState, view, opts) {
 
         var newTree = view(currentState)
 
-        if (opts.createOnly) {
-            create(newTree, opts)
+        if (opts.createOnly || !target) {
+            target = create(newTree, opts)
         } else {
             var patches = diff(tree, newTree, opts)
             patch(target, patches, opts)
