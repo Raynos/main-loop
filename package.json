@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "raf": "git://github.com/Raynos/raf",
-    "virtual-dom": "git://github.com/Raynos/virtual-dom#0.0.4-hooks"
+    "virtual-dom": "git://github.com/Matt-Esch/virtual-dom#aff7ed63ae7bbe018448640eb26c2ffb2a50a970"
   },
   "devDependencies": {
     "global": "^3.0.0",
