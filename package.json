@@ -17,7 +17,7 @@
     "email": "raynos2@gmail.com"
   },
   "dependencies": {
-    "raf": "^0.1.0",
+    "raf": "git://github.com/Raynos/raf",
     "virtual-dom": "git://github.com/Raynos/virtual-dom#0.0.4-hooks"
   },
   "devDependencies": {

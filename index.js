@@ -1,4 +1,4 @@
-var raf = require("raf").polyfill
+var raf = require("raf/polyfill")
 var vdomCreate = require("virtual-dom/create-element")
 var vdomDiff = require("virtual-dom/diff")
 var vdomPatch = require("virtual-dom/patch")
