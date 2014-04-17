@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "raf": "^0.1.2",
-    "virtual-dom": "git://github.com/Matt-Esch/virtual-dom#aff7ed63ae7bbe018448640eb26c2ffb2a50a970"
+    "virtual-dom": "0.0.6"
   },
   "devDependencies": {
     "global": "^3.0.0",
