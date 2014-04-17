@@ -1,6 +1,6 @@
 {
   "name": "main-loop",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "description": "A rendering loop for diffable UIs",
   "keywords": [],
   "author": "Raynos <raynos2@gmail.com>",
