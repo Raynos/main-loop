@@ -14,8 +14,8 @@ function main(initialState, view, opts) {
     var patch = opts.patch || vdomPatch
     var redrawScheduled = false
 
-    var tree = view(currentState)
-    var target = create(tree, opts)
+    var tree = opts.initialTree || view(currentState)
+    var target = opts.target || create(tree, opts)
 
     currentState = null
 
@@ -45,7 +45,7 @@ function main(initialState, view, opts) {
             create(newTree, opts)
         } else {
             var patches = diff(tree, newTree, opts)
-            patch(target, patches, opts)
+            target = patch(target, patches, opts)
         }
 
         tree = newTree
