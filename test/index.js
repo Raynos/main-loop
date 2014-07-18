@@ -1,7 +1,7 @@
 var test = require("tape")
 var h = require("virtual-dom/h")
 var document = require("global/document")
-var raf = require("raf").polyfill
+var raf = require("raf")
 
 var mainLoop = require("../index")
 
