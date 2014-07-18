@@ -1,7 +1,7 @@
-var raf = require("raf/polyfill")
-var vdomCreate = require("virtual-dom/create-element")
-var vdomDiff = require("virtual-dom/diff")
-var vdomPatch = require("virtual-dom/patch")
+var raf = require("raf")
+var vtreeDiff = require("vtree/diff")
+var vdomCreate = require("vdom/create-element")
+var vdomPatch = require("vdom/patch")
 
 module.exports = main
 
@@ -10,7 +10,7 @@ function main(initialState, view, opts) {
 
     var currentState = initialState
     var create = opts.create || vdomCreate
-    var diff = opts.diff || vdomDiff
+    var diff = opts.diff || vtreeDiff
     var patch = opts.patch || vdomPatch
     var redrawScheduled = false
 
