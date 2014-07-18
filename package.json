@@ -23,8 +23,9 @@
   },
   "devDependencies": {
     "global": "^3.0.0",
+    "istanbul": "^0.3.0",
     "tape": "^2.13.3",
-    "istanbul": "^0.3.0"
+    "virtual-hyperscript": "^4.0.0"
   },
   "licenses": [
     {
