@@ -19,8 +19,8 @@
   "dependencies": {
     "error": "^4.1.1",
     "raf": "^2.0.1",
-    "vdom": "0.0.14",
-    "vtree": "0.0.14"
+    "vdom": "0.0.15",
+    "vtree": "0.0.15"
   },
   "devDependencies": {
     "global": "^3.0.0",
