@@ -51,6 +51,28 @@ loop.update({
 })
 ```
 
+## Docs
+
+See [docs.mli][docs] for type definitions
+
+### `var loop = mainLoop(initialState, render, opts)`
+
+`mainLoop` manages a requestAnimationFrame rendering loop for
+  you. Interally it will call your `render` function with the
+  most recent state and then apply a diff and patch cycle.
+
+When you call `mainLoop` with the `initialState` it will call
+  `render` with the `initialState` as an argument and then
+  creates a DOM element from the result of `render`.
+
+`mainLoop` returns a `loop` object that has a `target` property
+  and an `update` method.
+
+#### `loop.target`
+
+The DOM element created on the initial call of `mainLoop` is
+  returned as the `target` property of `loop`.
+
 ## Installation
 
 `npm install main-loop`
@@ -73,3 +95,5 @@ loop.update({
   [10]: https://david-dm.org/Raynos/main-loop
   [11]: https://ci.testling.com/Raynos/main-loop.png
   [12]: https://ci.testling.com/Raynos/main-loop
+
+  [docs]: https://github.com/Raynos/main-loop/tree/master/docs.mli
