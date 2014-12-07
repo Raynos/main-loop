@@ -1,7 +1,7 @@
 var raf = require("raf")
-var vtreeDiff = require("vtree/diff")
-var vdomCreate = require("vdom/create-element")
-var vdomPatch = require("vdom/patch")
+var vtreeDiff = require("virtual-dom/vtree/diff")
+var vdomCreate = require("virtual-dom/vdom/create-element")
+var vdomPatch = require("virtual-dom/vdom/patch")
 var TypedError = require("error/typed")
 
 var InvalidUpdateInRender = TypedError({

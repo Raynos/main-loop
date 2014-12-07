@@ -1,5 +1,5 @@
 var test = require("tape")
-var h = require("virtual-hyperscript")
+var h = require("virtual-dom/virtual-hyperscript")
 var document = require("global/document")
 var raf = require("raf")
 
