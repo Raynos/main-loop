@@ -19,14 +19,12 @@
   "dependencies": {
     "error": "^4.1.1",
     "raf": "^2.0.1",
-    "vdom": "git://github.com/Raynos/vdom#hooks",
-    "vtree": "git://github.com/Raynos/vtree#hooks"
+    "virtual-dom": "0.0.23"
   },
   "devDependencies": {
     "global": "^3.0.0",
     "istanbul": "^0.3.0",
-    "tape": "^2.13.3",
-    "virtual-hyperscript": "git://github.com/Raynos/virtual-hyperscript#master"
+    "tape": "^2.13.3"
   },
   "licenses": [
     {
