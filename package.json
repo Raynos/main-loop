@@ -18,13 +18,13 @@
   },
   "dependencies": {
     "error": "^4.1.1",
-    "raf": "^2.0.1",
-    "virtual-dom": "0.0.23"
+    "raf": "^2.0.1"
   },
   "devDependencies": {
     "global": "^3.0.0",
     "istanbul": "^0.3.0",
-    "tape": "^2.13.3"
+    "tape": "^2.13.3",
+    "virtual-dom": "0.0.23"
   },
   "licenses": [
     {

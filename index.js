@@ -1,7 +1,4 @@
 var raf = require("raf")
-var vtreeDiff = require("virtual-dom/vtree/diff")
-var vdomCreate = require("virtual-dom/vdom/create-element")
-var vdomPatch = require("virtual-dom/vdom/patch")
 var TypedError = require("error/typed")
 
 var InvalidUpdateInRender = TypedError({
@@ -23,9 +20,9 @@ function main(initialState, view, opts) {
     opts = opts || {}
 
     var currentState = initialState
-    var create = opts.create || vdomCreate
-    var diff = opts.diff || vtreeDiff
-    var patch = opts.patch || vdomPatch
+    var create = opts.create
+    var diff = opts.diff
+    var patch = opts.patch
     var redrawScheduled = false
 
     var tree = opts.initialTree || view(currentState)
