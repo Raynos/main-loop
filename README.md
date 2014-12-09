@@ -38,7 +38,7 @@ function render(state) {
 
 // set up a loop
 var loop = mainLoop(initState, render, {
-    create: require("virtual-dom/create"),
+    create: require("virtual-dom/create-element"),
     diff: require("virtual-dom/diff"),
     patch: require("virtual-dom/patch")
 })
