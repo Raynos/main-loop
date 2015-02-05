@@ -62,13 +62,14 @@ function main(initialState, view, opts) {
         var newTree = view(currentState)
 
         if (opts.createOnly) {
+            inRenderingTransaction = false
             create(newTree, opts)
         } else {
             var patches = diff(tree, newTree, opts)
+            inRenderingTransaction = false
             target = patch(target, patches, opts)
         }
 
-        inRenderingTransaction = false
         tree = newTree
         currentState = null
     }
