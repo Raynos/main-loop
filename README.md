@@ -12,6 +12,10 @@
 
 A rendering loop for diffable UIs
 
+`main-loop` is an optimization module for a virtual DOM system. Normally you would re-create the virtual tree every time your state changes. This is not optimum, with main-loop you will only update your virtual tree at most once per request animation frame.
+
+`main-loop` basically gives you batching of your virtual DOM changes, which means if you change your model multiple times it will be rendered once asynchronously on the next request animation frame.
+
 ## Example
 
 ```js
