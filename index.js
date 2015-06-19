@@ -53,7 +53,7 @@ function main(initialState, view, opts) {
     }
 
     function redraw() {
-        redrawScheduled = false;
+        redrawScheduled = false
         if (currentState === null) {
             return
         }
