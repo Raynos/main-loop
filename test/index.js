@@ -68,3 +68,20 @@ test("can set up main loop", function (assert) {
         })
     })
 })
+
+test("loop.state exposed", function (assert) {
+    var loop = mainLoop({ n: 0 }, render, {
+        document: document,
+        create: require("virtual-dom/create-element"),
+        diff: require("virtual-dom/diff"),
+        patch: require("virtual-dom/patch")
+    })
+    assert.equal(loop.state.n, 0)
+    loop.update({ n: 4 })
+    assert.equal(loop.state.n, 4)
+    assert.end()
+ 
+    function render(state) {
+        return h('div', String(state.n))
+    }
+})

@@ -59,6 +59,29 @@ loop.update({
 })
 ```
 
+## var loop = mainLoop(initState, render, opts)
+
+Create a loop object with some initial state, a render function, and some
+options. Your `function render (state) {}` receives the current state as its
+argument and must return a virtual-dom object.
+
+You must supply: `opts.diff`, `opts.patch`, and `opts.create`. These can be
+obtained directly from `require("virtual-dom")`.
+
+Optionally supply an `opts.target` and `opts.initialTree`.
+
+## loop.target
+
+The main-loop root DOM element. Insert this element to the page.
+
+## loop.update(newState)
+
+Update the page state, automatically re-rendering the page as necessary.
+
+## loop.state
+
+Read the current main-loop state. To modify the loop state, use `loop.update()`.
+
 ## Installation
 
 `npm install main-loop`

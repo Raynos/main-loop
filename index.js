@@ -31,10 +31,12 @@ function main(initialState, view, opts) {
 
     currentState = null
 
-    return {
+    var loop = {
+        state: initialState,
         target: target,
         update: update
     }
+    return loop
 
     function update(state) {
         if (inRenderingTransaction) {
@@ -50,6 +52,7 @@ function main(initialState, view, opts) {
         }
 
         currentState = state
+        loop.state = state
     }
 
     function redraw() {
