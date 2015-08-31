@@ -78,6 +78,10 @@ The main-loop root DOM element. Insert this element to the page.
 
 Update the page state, automatically re-rendering the page as necessary.
 
+## loop.state
+
+Read the current main-loop state. To modify the loop state, use `loop.update()`.
+
 ## Installation
 
 `npm install main-loop`
