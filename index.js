@@ -9,7 +9,8 @@ var InvalidUpdateInRender = TypedError({
         "The diff is: {stringDiff}.\n" +
         "SUGGESTED FIX: find the state mutation in your view " +
             "or rendering function and remove it.\n" +
-        "The view should not have any side effects.\n",
+        "The view should not have any side effects.\n" +
+        "This may also have happened if rendering did not complete due to an error.\n",
     diff: null,
     stringDiff: null
 })
