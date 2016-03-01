@@ -80,8 +80,40 @@ test("loop.state exposed", function (assert) {
     loop.update({ n: 4 })
     assert.equal(loop.state.n, 4)
     assert.end()
- 
+
     function render(state) {
         return h('div', String(state.n))
     }
 })
+
+test("render called with monotonically increasing times", function(assert){
+    assert.plan(2)
+
+    var times = []
+    var loop = mainLoop({ n: 0 }, render, {
+        document: document,
+        create: require("virtual-dom/create-element"),
+        diff: require("virtual-dom/diff"),
+        patch: require("virtual-dom/patch")
+    })
+
+
+    function render(state, time) {
+        times.push(time);
+        return h('div', String(state.n))
+    }
+
+
+    raf(function () {
+
+        loop.update({ n: 1})
+
+        raf(function () {
+            loop.update({ n: 2})
+
+            assert.equal(times.length, 2)
+            assert.ok(times[0] < times[1], "should be increasing")
+            assert.end()
+        })
+    })
+});
