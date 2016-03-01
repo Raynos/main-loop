@@ -1,4 +1,5 @@
 var raf = require("raf")
+var now = require('performance-now')
 var TypedError = require("error/typed")
 
 var InvalidUpdateInRender = TypedError({
@@ -26,7 +27,7 @@ function main(initialState, view, opts) {
     var patch = opts.patch
     var redrawScheduled = false
 
-    var tree = opts.initialTree || view(currentState)
+    var tree = opts.initialTree || view(currentState, now());
     var target = opts.target || create(tree, opts)
     var inRenderingTransaction = false
 
@@ -56,14 +57,14 @@ function main(initialState, view, opts) {
         loop.state = state
     }
 
-    function redraw() {
+    function redraw(time) {
         redrawScheduled = false
         if (currentState === null) {
             return
         }
 
         inRenderingTransaction = true
-        var newTree = view(currentState)
+        var newTree = view(currentState, time)
 
         if (opts.createOnly) {
             inRenderingTransaction = false
