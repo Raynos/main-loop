@@ -18,8 +18,7 @@
   },
   "dependencies": {
     "error": "^4.1.1",
-    "raf": "^2.0.1",
-    "performance-now": "^0.1.4"
+    "raf": "^2.0.1"
   },
   "devDependencies": {
     "global": "^3.0.0",
