@@ -26,7 +26,7 @@ function main(initialState, view, opts) {
     var patch = opts.patch
     var redrawScheduled = false
 
-    var tree = opts.initialTree || view(currentState)
+    var tree = opts.initialTree || view(currentState, 0);
     var target = opts.target || create(tree, opts)
     var inRenderingTransaction = false
 
@@ -56,14 +56,14 @@ function main(initialState, view, opts) {
         loop.state = state
     }
 
-    function redraw() {
+    function redraw(time) {
         redrawScheduled = false
         if (currentState === null) {
             return
         }
 
         inRenderingTransaction = true
-        var newTree = view(currentState)
+        var newTree = view(currentState, time)
 
         if (opts.createOnly) {
             inRenderingTransaction = false
