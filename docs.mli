@@ -14,7 +14,8 @@ type MainLoop<T> : (
         ) => void,
         initialTree?: VElem,
         target?: DOMElement,
-        createOnly?: Boolean
+        createOnly?: Boolean,
+        raf?: (cb) => void
     }
 ) => {
     target: DOMElement,
