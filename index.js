@@ -1,4 +1,4 @@
-var raf = require("raf")
+var defaultRaf = require("raf")
 var TypedError = require("error/typed")
 
 var InvalidUpdateInRender = TypedError({
@@ -24,6 +24,7 @@ function main(initialState, view, opts) {
     var create = opts.create
     var diff = opts.diff
     var patch = opts.patch
+    var raf = opts.raf || defaultRaf
     var redrawScheduled = false
 
     var tree = opts.initialTree || view(currentState, 0);

@@ -70,6 +70,9 @@ obtained directly from `require("virtual-dom")`.
 
 Optionally supply an `opts.target` and `opts.initialTree`.
 
+You may supply an implementation of [`requestAnimationFrame`][mdn-raf] as
+`opts.raf`.
+
 ## loop.target
 
 The main-loop root DOM element. Insert this element to the page.
@@ -104,3 +107,4 @@ Read the current main-loop state. To modify the loop state, use `loop.update()`.
   [10]: https://david-dm.org/Raynos/main-loop
   [11]: https://ci.testling.com/Raynos/main-loop.png
   [12]: https://ci.testling.com/Raynos/main-loop
+  [mdn-raf]: https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
